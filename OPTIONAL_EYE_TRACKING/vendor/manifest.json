@@ -1,0 +1,9 @@
+{
+  "name": "webgazer",
+  "version": "3.5.3",
+  "source": "https://registry.npmjs.org/webgazer/-/webgazer-3.5.3.tgz",
+  "sha256": "e276d085eb490b5ba65481c368371be03b1a358d12d95336af0a8239f643f8e0",
+  "license": "GPL-3.0-or-later",
+  "note": "FaceMesh runtime and model assets are bundled locally; camera access and calibration are still user initiated.",
+  "local_face_mesh_assets": "../mediapipe/face_mesh/ASSET_MANIFEST.json"
+}

@@ -1,0 +1,16 @@
+{
+  "archive": "SIMULATED_BROWSER_EXAMPLE.zip",
+  "status": "PASS",
+  "condition": "gaze_emg",
+  "simulated_emg": true,
+  "fast_demo": true,
+  "game_status": "completed",
+  "rows": {
+    "emg": 8357,
+    "gaze": 736,
+    "pupil": 0,
+    "events": 30,
+    "trials": 2
+  },
+  "trials_excluded_for_timing": 1
+}

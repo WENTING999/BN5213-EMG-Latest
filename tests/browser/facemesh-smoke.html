@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>FaceMesh local asset check</title>
+<style>body{font:18px/1.6 system-ui;max-width:850px;margin:40px auto;color:#213e32}button{padding:12px;font:inherit}output{display:block;white-space:pre-wrap;padding:20px;background:#eef4ed;margin-top:20px}</style>
+<h1>FaceMesh local asset check</h1><p>This test loads the actual bundled WebGazer tracker and processes a blank canvas. It does not request a camera, microphone or personal image.</p>
+<button id="run">Run local model test</button><output id="result">Not started</output><canvas id="image" width="128" height="128" hidden></canvas>
+<script src="/OPTIONAL_EYE_TRACKING/vendor/webgazer.js"></script><script type="module">
+import {checkFaceMeshAssets,FACE_MESH_BASE} from '/OPTIONAL_EYE_TRACKING/camera-assets.mjs';
+document.getElementById('run').onclick=async()=>{
+ const output=document.getElementById('result');let detector;
+ try{
+  output.textContent='Checking local assets...';await checkFaceMeshAssets();
+  window.webgazer.params.faceMeshSolutionPath=FACE_MESH_BASE;
+  output.textContent='Initializing the bundled WebGazer FaceMesh tracker...';
+  detector=await window.webgazer.getTracker().init();
+  const canvas=document.getElementById('image');canvas.getContext('2d').fillRect(0,0,128,128);
+  const faces=await detector.estimateFaces(canvas);
+  output.textContent=`PASS\nLocal JavaScript, WASM, data and graph loaded.\nBlank canvas processed; detected faces: ${faces.length}.\nNo camera permission or camera stream was used.`;
+ }catch(error){output.textContent=`FAIL\n${error.stack||error.message}`;}
+ finally{if(detector)await detector.dispose();}
+};
+</script></html>

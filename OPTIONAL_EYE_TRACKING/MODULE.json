@@ -1,0 +1,7 @@
+{
+  "name": "Optional WebGazer camera gaze",
+  "version": "1.4.0",
+  "ui_entry": "calibration-ui.mjs",
+  "camera_entry": "camera-gaze.mjs",
+  "removal": "Stop and export, close the page and server, rename or remove OPTIONAL_EYE_TRACKING, restart. Mouse and external gaze remain available."
+}

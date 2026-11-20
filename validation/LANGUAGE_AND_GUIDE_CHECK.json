@@ -1,0 +1,12 @@
+{
+  "version": "1.4.0-emg",
+  "runtime_language": "English",
+  "guide_language": "Chinese",
+  "optional_eye_folder": "OPTIONAL_EYE_TRACKING",
+  "camera_assets_local": true,
+  "camera_installation_required": false,
+  "emg_calibration_moved": false,
+  "gaze_calibration_moved": false,
+  "node_tests_passed": 54,
+  "status": "PASS"
+}

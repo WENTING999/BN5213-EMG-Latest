@@ -1,0 +1,28 @@
+Browser tab: 7, Title: "Catch Your Bus", URL: "http://127.0.0.1:8895/?fast=1&sets=1&reps=2".
+0 AXWebArea Catch Your Bus, URL: 127.0.0.1:8895/?fast=1&sets=1&reps=2
+	1 container appHeader
+		2 link Description: Catch Your Bus home, Value: 127.0.0.1:8895/?fast=1&sets=1&reps=2#, ID: brandHome
+		3 text GAZE + EMG
+		171 text SET 1 OF 1
+	161 container Find Your Bus!, ID: gameScreen
+		162 text CATCH YOUR BUS
+		163 heading Find Your Bus!, Value: 1, ID: gameTitle
+			172 text Find Your Bus!
+		173 text SET 1 / 1
+		174 text 1 / 2
+		170 container Description: 4 bus choices, ID: busGrid
+			175 button Bus route 67
+			176 button Bus route 01
+			177 button Bus route 45
+			178 button Bus route 200
+		168 text Look at your chosen bus, then confirm your selection.
+	31 container Fast demo mode
+		32 text FAST DEMO
+	154 container Input status and session controls
+		179 text SOFTWARE SIMULATION - not human EMG
+		180 text RECORDING · Gaze + EMG · mouse_simulation
+		157 button Pause, ID: pauseTask
+		158 button End session, ID: endTask
+		159 button EMG setup, ID: openPanel
+
+The focused UI element is 0 AXWebArea Catch Your Bus, URL: 127.0.0.1:8895/?fast=1&sets=1&reps=2

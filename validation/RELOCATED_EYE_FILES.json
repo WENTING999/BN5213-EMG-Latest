@@ -1,0 +1,107 @@
+[
+  {
+    "from": "web/lib/camera-assets.mjs",
+    "to": "OPTIONAL_EYE_TRACKING/camera-assets.mjs",
+    "sha256": "dfd06e663ea19b9bb38f71da805adfe06f8162e406da570e95b46ed74a1aa7af"
+  },
+  {
+    "from": "web/lib/gaze-calibration.mjs",
+    "to": "OPTIONAL_EYE_TRACKING/gaze-calibration.mjs",
+    "sha256": "835ff20cef1e9a24dc08bb895603be047edbf5790e90aba2660ab6649cc5d720"
+  },
+  {
+    "from": "web/vendor/gnu-lgpl-v3.0.md",
+    "to": "OPTIONAL_EYE_TRACKING/vendor/gnu-lgpl-v3.0.md",
+    "sha256": "67c1a19c25754e1389117c48739e7e313b1e3b2279baeab12121059a1c5441f3"
+  },
+  {
+    "from": "web/vendor/gplv3.md",
+    "to": "OPTIONAL_EYE_TRACKING/vendor/gplv3.md",
+    "sha256": "26c03bc049c15fc5b9e52d791a06f1a6bc32f89edc8f8c701ab0aadf66e85b82"
+  },
+  {
+    "from": "web/vendor/LICENSE.md",
+    "to": "OPTIONAL_EYE_TRACKING/vendor/LICENSE.md",
+    "sha256": "b13be3f2b49a9fc6efb72a7201061e4b77da4a2dfb2c2b0e89d625295c4398f6"
+  },
+  {
+    "from": "web/vendor/manifest.json",
+    "to": "OPTIONAL_EYE_TRACKING/vendor/manifest.json",
+    "sha256": "4ee38b118bdb3ad7201047fc0653b639bf2eba0966509ac047b98ba3d96f199f"
+  },
+  {
+    "from": "web/vendor/webgazer.js",
+    "to": "OPTIONAL_EYE_TRACKING/vendor/webgazer.js",
+    "sha256": "e276d085eb490b5ba65481c368371be03b1a358d12d95336af0a8239f643f8e0"
+  },
+  {
+    "from": "web/mediapipe/face_mesh/ASSET_MANIFEST.json",
+    "to": "OPTIONAL_EYE_TRACKING/mediapipe/face_mesh/ASSET_MANIFEST.json",
+    "sha256": "88867d3e655c294b9d01a797c620f3b6c411d1c2f8796daa47d6a726e4ce4843"
+  },
+  {
+    "from": "web/mediapipe/face_mesh/face_mesh.binarypb",
+    "to": "OPTIONAL_EYE_TRACKING/mediapipe/face_mesh/face_mesh.binarypb",
+    "sha256": "139546bf05aebb33e2611b6b945f3a1629c316ca924e33cec1547c85ddef9f53"
+  },
+  {
+    "from": "web/mediapipe/face_mesh/face_mesh.js",
+    "to": "OPTIONAL_EYE_TRACKING/mediapipe/face_mesh/face_mesh.js",
+    "sha256": "5db8555ac80ca2ad7366fbb3ea53c0d0959609fc9abb7b8be37a74ec1ac4ba9c"
+  },
+  {
+    "from": "web/mediapipe/face_mesh/face_mesh_solution_packed_assets.data",
+    "to": "OPTIONAL_EYE_TRACKING/mediapipe/face_mesh/face_mesh_solution_packed_assets.data",
+    "sha256": "dbe5905c582c0462cdaea17e7e6ecea92edaa8cccc515c5e2e7291f2cbb5fb99"
+  },
+  {
+    "from": "web/mediapipe/face_mesh/face_mesh_solution_packed_assets_loader.js",
+    "to": "OPTIONAL_EYE_TRACKING/mediapipe/face_mesh/face_mesh_solution_packed_assets_loader.js",
+    "sha256": "e5de8685b299184813f7cec668e499023937ae521b70f60cd0fc4832930446e0"
+  },
+  {
+    "from": "web/mediapipe/face_mesh/face_mesh_solution_simd_wasm_bin.data",
+    "to": "OPTIONAL_EYE_TRACKING/mediapipe/face_mesh/face_mesh_solution_simd_wasm_bin.data",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "from": "web/mediapipe/face_mesh/face_mesh_solution_simd_wasm_bin.js",
+    "to": "OPTIONAL_EYE_TRACKING/mediapipe/face_mesh/face_mesh_solution_simd_wasm_bin.js",
+    "sha256": "ca291877afb9c13308cf6be42f23cd39f1adf0036bb63ecad2ce16073bcf07c7"
+  },
+  {
+    "from": "web/mediapipe/face_mesh/face_mesh_solution_simd_wasm_bin.wasm",
+    "to": "OPTIONAL_EYE_TRACKING/mediapipe/face_mesh/face_mesh_solution_simd_wasm_bin.wasm",
+    "sha256": "fb9e9cfe8b83a914e40eab2efd3b0d92a61f82a7c968589f223ab2a7e331d314"
+  },
+  {
+    "from": "web/mediapipe/face_mesh/face_mesh_solution_wasm_bin.js",
+    "to": "OPTIONAL_EYE_TRACKING/mediapipe/face_mesh/face_mesh_solution_wasm_bin.js",
+    "sha256": "0a532ae8450e7e5f2788cc92ad190210f721446d3fd9cb259fdda958e66102c1"
+  },
+  {
+    "from": "web/mediapipe/face_mesh/face_mesh_solution_wasm_bin.wasm",
+    "to": "OPTIONAL_EYE_TRACKING/mediapipe/face_mesh/face_mesh_solution_wasm_bin.wasm",
+    "sha256": "54522fa25c505bf094242f969b4e4919125eb0dadccb568f2af171bbd65865f9"
+  },
+  {
+    "from": "web/mediapipe/face_mesh/index.d.ts",
+    "to": "OPTIONAL_EYE_TRACKING/mediapipe/face_mesh/index.d.ts",
+    "sha256": "9269579ae1b81e0f7b5232fa759cead6329a3683da8c864d8b258c9ffd5a1ad4"
+  },
+  {
+    "from": "web/mediapipe/face_mesh/LICENSE-2.0.txt",
+    "to": "OPTIONAL_EYE_TRACKING/mediapipe/face_mesh/LICENSE-2.0.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "from": "web/mediapipe/face_mesh/package.json",
+    "to": "OPTIONAL_EYE_TRACKING/mediapipe/face_mesh/package.json",
+    "sha256": "e279c3b6774049f9f3147e5e2a47998a6114774c2ba6fa7a323f8fd505bd8109"
+  },
+  {
+    "from": "web/mediapipe/face_mesh/README.md",
+    "to": "OPTIONAL_EYE_TRACKING/mediapipe/face_mesh/README.md",
+    "sha256": "9dad28188ae54ea420e3d29c23360b040a0dfb88954b99a3e456b8a8c93cf2a1"
+  }
+]

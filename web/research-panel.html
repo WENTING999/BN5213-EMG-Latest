@@ -1,0 +1,51 @@
+<aside class="emg-panel" id="emgPanel" aria-label="EMG researcher panel">
+ <header><div><span class="badge">BN5213 · EMG INTEGRATION</span><h2>Live EMG &amp; setup</h2></div><button id="closePanel">Close panel</button></header>
+ <p id="protocolLabel"></p><p><a href="/guide.html" target="_blank" rel="noopener">Open Chinese user guide</a></p>
+ <div class="emg-message" id="emgMessage" role="status">Upload BN5213_EMG.ino first. Close Arduino Serial Monitor, then click Connect Arduino and select its port.</div>
+ <label class="field">Gaze source<select id="gazeSelect" aria-label="Gaze source"><option value="mouse_simulation">Mouse gaze test · click a bus</option><option value="webgazer">WebGazer · camera gaze</option><option value="external">External eye tracker · adapter input</option></select></label>
+ <p class="small">Mouse gaze test changes only gaze selection. Choose Connect Arduino in this panel to keep EMG real.</p>
+ <div id="cameraOptions" hidden><button id="cameraCalibrate">Start camera and calibrate</button><p class="small" id="cameraResult">9-point calibration followed by 5-point independent validation.</p></div>
+ <label id="externalOptions" hidden><input type="checkbox" id="externalValidated"> External tracker calibration and viewport coordinates verified</label>
+ <details open><summary>Software test tools</summary><div class="emg-controls"><button id="connectSim">Connect software simulation</button><button id="simPulse" disabled>Simulate contraction (M)</button></div><p class="small">Generated data only. M never substitutes for real Arduino EMG. To switch sources, stop, export and disconnect first.</p></details>
+ <h3>Connect the real sensor</h3>
+ <div class="emg-controls"><button class="primary" id="connectSerial">Connect Arduino</button><button id="disconnectEmg" disabled>Disconnect</button></div>
+ <section class="connection-health" id="connectionHealth" data-state="disconnected" aria-label="Connection progress">
+  <strong id="connectionTitle">Not connected to a serial port</strong><p id="connectionAction">USB power alone does not connect this page. Click Connect Arduino.</p>
+  <ol class="connection-checks"><li id="portCheck">Port: not opened</li><li id="firmwareCheck">Firmware: not detected</li><li id="samplesCheck">Samples: not received</li><li id="baselineCheck">Baseline: not ready</li></ol>
+ </section>
+ <div class="values"><span id="sourceValue">disconnected</span><span id="clockValue">Clock not ready</span></div>
+ <div class="values"><strong id="featureValue">Burst energy: waiting for samples</strong></div>
+ <h3>Denoised sensor envelope</h3>
+ <canvas id="emgChart" width="800" height="280" aria-label="Live EMG envelope in ADC counts"></canvas>
+ <p class="chart-legend"><span class="filtered-line">Denoised envelope</span><label><input id="showRaw" type="checkbox"> Show raw ADC overlay</label></p>
+ <h3>Short-window activation detector</h3>
+ <canvas id="featureChart" width="800" height="240" aria-label="Burst energy and calibrated detection threshold"></canvas>
+ <p class="chart-legend"><span class="filtered-line">Burst energy</span><span class="threshold-line">Burst threshold</span></p>
+ <div class="values"><span id="signalValue">ADC —</span><span id="baselineValue">No baseline</span><span id="lossValue">No samples yet</span></div>
+ <progress id="baselineProgress" max="1" value="0" aria-label="Resting baseline progress"></progress>
+ <div class="emg-controls"><button id="calibrateEmg" disabled>Recalibrate baseline</button><button id="openSignal">Open signal view</button></div>
+ <label class="field">Chart range<select id="chartScale"><option value="auto">Auto zoom (visual display only)</option><option value="full">Full ADC range: 0–1023</option></select></label>
+ <p class="small">Detection accepts either a clear denoised amplitude increase OR 120 ms burst energy combined with waveform change above seated-rest noise. Both paths use a 30 ms evidence check. No 0.5-second hold is needed. Activation does not verify standing posture. Raw ADC is always saved.</p>
+ <label class="field">Detection sensitivity<select id="detectorSensitivity"><option value="1">Balanced</option><option value="1.5">Conservative · fewer false triggers</option><option value="0.7">Sensitive · check for false triggers</option></select></label>
+ <label class="field">Power-line filter<select id="filterMains"><option value="50">50 Hz</option><option value="60">60 Hz</option><option value="0">Off</option></select></label>
+ <p class="small">Changing either setting starts a new five-second resting calibration. Settings are locked during recording and games. Calibrate while seated and still, then check that rest stays QUIET and a new contraction produces ACTIVATION DETECTED.</p>
+ <details><summary>Connection diagnostics</summary><p class="small" id="serialDiagnostics">No serial data.</p><p class="small">Expected: BN5213 protocol v1, 115200 baud, 200 Hz. A sketch that only prints numbers is incompatible with this page.</p></details>
+ <h3>Session settings</h3>
+ <label class="field">Participant ID<input id="participantId" type="text" value="P001" maxlength="32" pattern="[A-Za-z0-9_-]+" aria-label="Participant ID"></label>
+ <label class="field">Condition<select id="conditionSelect" aria-label="Condition"><option value="gaze_emg">Gaze + EMG confirmation</option><option value="gaze_only">Gaze-only confirmation</option></select></label>
+ <label class="field">Bus choices<select id="gridSelect" aria-label="Bus choices"><option value="4">4 choices · 2 × 2</option><option value="6">6 choices · 3 × 2</option><option value="9">9 choices · original layout</option></select></label>
+ <label class="small"><input type="checkbox" id="hardwareVerified"> Supervisor has checked sensor power, heating and body-to-computer electrical isolation before body-connected acquisition.</label>
+ <p class="small" id="pupilStatus">Pupil input: not connected. No pupil diameter or workload is generated.</p>
+ <h3>Recording &amp; export</h3>
+ <div class="emg-controls"><button id="benchRecord">Record signal only</button><button id="benchStop" disabled>Stop recording</button><button class="primary" id="downloadData" disabled>Export ZIP</button></div>
+ <p class="small" id="recordCounts">No recording yet. Start Session records automatically.</p>
+ <label class="field">Self-reported workload: 0–10 (optional)<select id="workloadScore" aria-label="Self-reported workload"><option value="">Not provided</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></label>
+ <details><summary>Session controls</summary><p>Connect and check the live signal first. Then close this panel, complete the four checks, and select Start Session. Lock a bus with gaze or mouse, then make a new short activation. Confirmation advances the task automatically. No observer buttons or 0.5-second hold are required. One activation counts once; let the signal settle before the next selection.</p><p>Standard: 3 sets × 10 repetitions. Fast demo: 1 set × 2 repetitions. Completed counts are confirmed task selections, not verified complete stands.</p><p><a href="?fast=1&amp;sets=1&amp;reps=2">Fast demo (export first)</a> · <a href="/">Standard session (export first)</a></p></details>
+</aside>
+<footer class="emg-bar" aria-label="Input status and session controls">
+ <div><strong id="barSource">EMG DISCONNECTED</strong><small id="barStatus">Open setup to connect Arduino</small></div>
+ <div class="emg-controls"><button id="pauseTask" disabled>Pause</button><button id="endTask" class="danger" disabled>End session</button><button id="openPanel" class="primary">EMG setup</button></div>
+</footer>
+<div class="emg-pause" id="pauseOverlay" hidden><h2>Session paused</h2><p id="pauseExplanation"></p><div class="emg-controls"><button id="resumeTask">Resume session</button><button id="pauseOpen">Open setup</button></div><p>The interrupted trial is excluded from reaction-time analysis.</p></div>
+<div class="signal-monitor" id="signalMonitor" hidden aria-label="Live EMG signal view"><header><div><span class="badge">SHORT-WINDOW ACTIVATION</span><h1>EMG activation detector</h1></div><button id="closeSignal">Close signal view</button></header><p id="monitorSource">EMG DISCONNECTED</p><p id="monitorValues">No samples received.</p><canvas id="largeEmgChart" width="1400" height="600" aria-label="Large burst energy and threshold chart"></canvas><p class="chart-legend"><span class="filtered-line">Burst energy</span><span class="threshold-line">Burst threshold</span></p><p id="monitorStatus">Connect Arduino in EMG setup.</p><p>Energy is measured on the board envelope, not raw skin EMG. Activation does not verify a complete stand. No 0.5-second hold is required.</p></div>
+<div class="emg-calibration" id="calibrationOverlay" hidden><div class="instructions" id="calInstructions"></div><button id="calPoint" aria-label="Gaze calibration target"></button><button id="calCancel">Cancel calibration</button></div>

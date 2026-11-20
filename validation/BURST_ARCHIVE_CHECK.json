@@ -1,0 +1,16 @@
+{
+  "archive": "BURST_SCHEMA_SIMULATED_FIXTURE.zip",
+  "status": "PASS",
+  "condition": "gaze_emg",
+  "simulated_emg": true,
+  "fast_demo": null,
+  "game_status": "completed",
+  "rows": {
+    "emg": 1,
+    "gaze": 0,
+    "pupil": 0,
+    "events": 1,
+    "trials": 1
+  },
+  "trials_excluded_for_timing": 0
+}

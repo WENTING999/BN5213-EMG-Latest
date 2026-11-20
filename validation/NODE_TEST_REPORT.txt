@@ -1,0 +1,41 @@
+✔ Controller retains negative-time baseline and explicit source on all recorded streams (7.4403ms)
+✔ Device reboot invalidates calibration and does not carry old baseline into next recording (2.1857ms)
+✔ Disconnect prevents recording and a new source needs its own calibration (1.4375ms)
+✔ Serial chunks may split numbers or contain multiple CRLF records (3.6676ms)
+✔ Wrong firmware, voltage-range ADC values and invalid metadata are rejected (0.3486ms)
+✔ UNO micros rollover stays continuous; reboot starts a new segment (0.2175ms)
+✔ Clock estimate rejects impossible RTT and expires; measured drift is fitted (0.4198ms)
+✔ Baseline, sustained activation and hysteretic release retain onset and confirmation times (1.7701ms)
+✔ Short spikes, data gaps, missing baseline samples and clipping are handled (0.3986ms)
+✔ Recalibration removes the previous reference and requires a new baseline (0.2378ms)
+✔ Dwell history excludes future locks and expires if gaze callbacks stop (0.2564ms)
+✔ Gaze lock persists briefly outside its AOI, then expires despite other AOIs (0.1542ms)
+✔ Memory limit stops recording; later samples do not silently keep accumulating (0.2949ms)
+✔ CSV supports JSON, commas, Unicode, and prevents string formula injection (1.5085ms)
+✔ ZIP CRC and six exported files are independently readable by Python zipfile (3.6971ms)
+✔ USB-only state explicitly requires selecting a browser serial port (0.7143ms)
+✔ An open port with missing or incompatible firmware is not reported as live EMG (0.3267ms)
+✔ Sample, baseline and clock readiness are distinct and stale data cannot appear ready (0.3365ms)
+✔ Port chooser cancellation and a busy port give actionable English instructions (0.2932ms)
+✔ Auto zoom makes small valid signals visible without changing ADC samples or thresholds (1.4894ms)
+✔ EMG onset before gaze lock is rejected even if confirmation callback arrives after the lock (1.686ms)
+✔ Gaze-only confirmation does not claim EMG source or complete a repetition automatically (0.1885ms)
+✔ Manual observer needs standing followed by sitting and can count a confirmed trial once (2.31ms)
+✔ Stale gaze and unsynchronized events cannot confirm a selected bus (0.3948ms)
+✔ Paused trial rejects both confirmation and observer progression (0.124ms)
+✔ Fresh gaze dwell uses receipt clock and requires a continuous 300 ms (0.1182ms)
+✔ Integrated export keeps missing pupils empty, separates conditions, and derives timing from monotonic timestamps (1.4082ms)
+✔ REAL protocol travels through Web Serial parsing, baseline, clock mapping, activation and recording without simulation fallback (27.7927ms)
+✔ Web Serial reader accepts split UTF-8 chunks, reports bad frames, and cancels cleanly (6.04ms)
+✔ Unsupported browser fails explicitly instead of using simulated data as real (0.8874ms)
+✔ UI cannot start before input readiness and does not auto-count a confirmed selection (5.539ms)
+✔ Rest countdown freezes while paused, resumes remaining time, and requires Continue (2.4579ms)
+✔ Gaze-only trials retain blank EMG fields; abort preserves an unfinished trial with exclusion reason (43.8771ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 236.161
